@@ -9,21 +9,30 @@ namespace ConsoleApp1
 {
     class Program
     {
+        private static object now;
+
         static void Main(string[] args)
         {
             string name = string.Empty;
             string location = string.Empty;
 
-            Console.WriteLine("Please enter your full name");
+            Console.Write("Please enter your full name: ");
             name = Console.ReadLine();
 
-            Console.WriteLine("Where are you from?");
+            Console.Write("Where are you from? ");
             location = Console.ReadLine();
 
-            Console.WriteLine($"Your name is {name} You are from {location}");
+            Console.Write($"Your name is {name} You are from {location}");
 
-            var currentDate = DateTime.Now;
-            Console.WriteLine(currentDate.ToShortDateString());
+            Console.WriteLine("");
+           
+            //find remaining days
+            DateTime today = DateTime.Today;
+            DateTime christmas = new DateTime();
+          
+
+            //Console.WriteLine("{0} was {1} days ago", someDate, daysAgo.ToString("0"));
+
 
             //Come from 2.1
 

@@ -25,10 +25,13 @@ namespace ConsoleApp1
             Console.Write($"Your name is {name} You are from {location}");
 
             Console.WriteLine("");
-           
+
+            var currentDate = DateTime.Now;
+
+
             //find remaining days
-            DateTime today = DateTime.Today;
-            DateTime christmas = new DateTime();
+            var nextChristmas = new DateTime(currentDate.year, 12, 25);
+            var dateDiff = nextChristmas - currentDate; 
           
 
             //Console.WriteLine("{0} was {1} days ago", someDate, daysAgo.ToString("0"));

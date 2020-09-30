@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.plusRightLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.quotient = new System.Windows.Forms.NumericUpDown();
@@ -73,19 +74,21 @@
             // 
             this.startButton.AutoSize = true;
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(298, 427);
+            this.startButton.Location = new System.Drawing.Point(231, 376);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(207, 42);
-            this.startButton.TabIndex = 23;
+            this.startButton.TabIndex = 1;
             this.startButton.Text = "Start The Quiz";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // quotient
             // 
             this.quotient.Location = new System.Drawing.Point(547, 316);
             this.quotient.Name = "quotient";
             this.quotient.Size = new System.Drawing.Size(150, 26);
-            this.quotient.TabIndex = 30;
+            this.quotient.TabIndex = 5;
+            this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label11
             // 
@@ -132,7 +135,8 @@
             this.product.Location = new System.Drawing.Point(547, 252);
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(150, 26);
-            this.product.TabIndex = 29;
+            this.product.TabIndex = 4;
+            this.product.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label7
             // 
@@ -179,7 +183,8 @@
             this.difference.Location = new System.Drawing.Point(547, 180);
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(150, 26);
-            this.difference.TabIndex = 28;
+            this.difference.TabIndex = 3;
+            this.difference.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label3
             // 
@@ -226,7 +231,8 @@
             this.sum.Location = new System.Drawing.Point(547, 100);
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(150, 26);
-            this.sum.TabIndex = 26;
+            this.sum.TabIndex = 2;
+            this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label
             // 
@@ -262,7 +268,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(391, 3);
+            this.label1.Location = new System.Drawing.Point(288, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 37);
             this.label1.TabIndex = 24;
@@ -272,17 +278,22 @@
             // 
             this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLabel.Location = new System.Drawing.Point(547, 3);
+            this.timeLabel.Location = new System.Drawing.Point(444, 7);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(152, 39);
+            this.timeLabel.Size = new System.Drawing.Size(253, 39);
             this.timeLabel.TabIndex = 22;
             this.timeLabel.Click += new System.EventHandler(this.timeLabel_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 511);
+            this.ClientSize = new System.Drawing.Size(719, 444);
             this.Controls.Add(this.plusRightLabel);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.quotient);
@@ -306,8 +317,9 @@
             this.Controls.Add(this.plusLeftLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.timeLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Alec Willits | Math Quiz";
             ((System.ComponentModel.ISupportInitialize)(this.quotient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.product)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).EndInit();
